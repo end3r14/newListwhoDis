@@ -5,7 +5,7 @@
 using namespace std;
 DisTable::DisTable()
 {
-	HashTable.resize(10);
+	HashTable.resize(100);
 }
 
 void DisTable::disUpdate(Dis entry)
@@ -68,8 +68,10 @@ void DisTable::disSelect(Dis entry)
 
 		}
 	}
-
-
+	else
+	{
+		dList.selectNode(entry);
+	}
 }
 
 void DisTable::disDelete(Dis entry)
@@ -107,7 +109,7 @@ void DisTable::disPrint()
 	{
 		if (HashTable[i].getKey() != "-2" && HashTable[i].getKey() != "")
 		{
-			cout << left << setw(10) << "index = " << i << " ";
+			cout << "index = " << i << " ";
 			HashTable[i].print();
 		}
 	}
@@ -123,6 +125,7 @@ void DisTable::disInsert(Dis entry)
 		if (HashTable[index].getKey() == "")
 		{
 			HashTable[index] = entry;
+			dList.insertNode(HashTable[index]);
 			cout << "INSERTED AT INDEX " << index << endl;
 			break;
 		}
@@ -153,31 +156,4 @@ int DisTable::disHash(std::string key)
 	return total % HashTable.size();
 	
 
-}
-
-
-void DisTable::disSearch(Dis entry)
-{
-	cout << "Search" << endl;
-	int index = disHash(entry.getKey());
-	int probe = 0;
-	while(probe != HashTable.size())
-	{
-		if (HashTable[index].getKey() == "")
-		{
-			cout << "FAIL TO FIND ENTRY " << index << endl;
-			break;
-		}
-		else if (HashTable[index].getKey() == entry.getKey())
-		{
-			HashTable[index].getKey() == entry.getKey();
-			cout << "ENTRY SEARCH FOR IS FOUND" << index << endl;
-			break;
-		}
-		index = (index + 1) % HashTable.size();
-		cout << "COLLISION! TRYING INDEX " << index << endl;
-		probe++;
-
-	}
-	
 }

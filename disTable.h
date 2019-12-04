@@ -17,6 +17,4 @@ public:
 	void disDelete(Dis entry);
 	void disSelect(Dis entry);
 	void disUpdate(Dis entry);
-
-
 };

@@ -14,30 +14,44 @@ int main()
 	Dis f("Clay County, Tennessee", "400", "333", "708", "1262", "392", "710");
 
 	Dis sample("Bibb County, Alabama", "Hey", "Hey", "Hey", "Hey", "Hey", "Hey");
-	Dis sample2("*", "*", "*", "*", "*", "*", "*");
+	Dis sample2("*", "*", "*", "*", "Hey", "*", "*");
 
-	dTable.dList.deleteNode(f);
-	dTable.dList.selectNode(f);
-	
-	dTable.dList.insertNode(a);
-	dTable.dList.insertNode(b);
-	dTable.dList.insertNode(c);
-	dTable.dList.insertNode(d);
-	dTable.dList.insertNode(sample);
-	dTable.dList.insertNode(f);
+	dTable.disInsert(a);
+	dTable.disInsert(b);
+	dTable.disInsert(c);
+	dTable.disInsert(d);
+	dTable.disInsert(e);
+	dTable.disInsert(e);
+	cout << endl << endl << endl;
 	dTable.dList.printDisList();
+	cout << "YEAHHHHHHHH" << endl;
+	dTable.disSelect(sample);
+	cout << endl << endl;
+	dTable.disPrint();
 
 
-	dTable.dList.selectNode(f);
-	cout << endl;
+	//dTable.dList.deleteNode(f);
+	//dTable.dList.selectNode(f);
+	//
+	//dTable.dList.insertNode(a);
+	//dTable.dList.insertNode(b);
+	//dTable.dList.insertNode(c);
+	//dTable.dList.insertNode(d);
+	//dTable.dList.insertNode(sample);
+	//dTable.dList.insertNode(f);
+	//dTable.dList.printDisList();
 
-	dTable.dList.selectNode(f);
-	dTable.dList.selectNode(sample2);
-	dTable.dList.deleteNode(a);
-	dTable.dList.printDisList();
 
-	dTable.dList.insertNode(f);
-	dTable.dList.printDisList();
+	//dTable.dList.selectNode(f);
+	//cout << endl;
+
+	//dTable.dList.selectNode(f);
+	//dTable.dList.selectNode(sample2);
+	//dTable.dList.deleteNode(a);
+	//dTable.dList.printDisList();
+
+	//dTable.dList.insertNode(f);
+	//dTable.dList.printDisList();
 
 	//dTable.disInsert(a);
 	//cout << endl;
